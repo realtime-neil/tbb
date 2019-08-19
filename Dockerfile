@@ -1,6 +1,6 @@
 # tbb/Dockerfile
 
-FROM debian:latest AS build
+FROM ubuntu:latest AS build
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VCS_URL
@@ -52,7 +52,7 @@ RUN set -euvx \
     && (cd out && dpkg-scanpackages . >Packages && dpkg-scanpackages . >Sources) \
     && echo "done"
 
-FROM debian:latest AS deploy
+FROM ubuntu:latest AS deploy
 ARG BUILD_CODE="default-build-code"
 WORKDIR /tmp/${BUILD_CODE}/tbb/out
 ARG BUILD_CODE="default-build-code"
