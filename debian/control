@@ -1,0 +1,27 @@
+Source: tbb
+Priority: extra
+Maintainer: Neil Roza <neil@rtr.ai>
+Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.16.1~)
+Standards-Version: 3.9.6
+Section: libs
+Homepage: http://threadingbuildingblocks.org/
+
+Package: libtbb-dev
+Section: libdevel
+Architecture: linux-any
+Multi-Arch: same
+Depends: libtbb2 (= ${binary:Version}), ${misc:Depends}
+Description: intel threading building blocks
+ intel threading building blocks
+ .
+ This package includes the TBB development files.
+
+Package: libtbb2
+Architecture: linux-any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: intel threading building blocks
+ intel threading building blocks
+ .
+ This package includes the TBB runtime files.
